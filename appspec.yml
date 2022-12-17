@@ -5,10 +5,10 @@
             destination: /var/www/html/
         hooks:
         BeforeInstall:
-            - location: install_webserver
+            - location: stop_app
             timeout: 300
             runas: root
+        AfterInstall:
             - location: start_app
             timeout: 300
             runas: root
-
